@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fcece3, #e8f1ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app {
+  background: #d8d6d6;
+  width: 100%;
+  max-width: 1400px;
+  border-radius: 40px;
+  padding: 28px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+}
+
+/* --- Topbar --- */
+/* --- Topbar Container --- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* This handles the spacing automatically */
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* --- Logo Section --- */
+.logo-box { 
+  width: 220px; /* Fixed width for the logo area */ 
+}
+.logo { 
+  width: 120px; /* Size the actual image */
+  height: auto;
+}
+
+/* --- Search Bar Section --- */
+.search-bar-container {
+  flex: 1; /* Tells this container to take up all available middle space */
+  display: flex;
+  justify-content: center; /* Centers the input within that space */
+  padding: 0 20px; /* Small breathing room, not 100px */
+}
+
+.search-bar-container input {
+  width: 100%;
+  max-width: 600px; /* Limits how wide the bar gets on big screens */
+  background: #f6f6f6;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 15px;
+  outline: black;
+}
+
+/* --- Navigation Icons --- */
+.nav-icons { 
+  display: flex;
+  gap: 25px; 
+  align-items: center;
+  flex-shrink: 0; /* Prevents icons from squishing */
+}
+
+.nav-icons span {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.user{ 
+  padding: 2px 5px; 
+  font-size: 16px;
+  max-width: 60px;
+  background-color: #bbb7b7;
+  border-radius: 255px 255px 255px 255px;
+}
+.user:hover {
+    cursor: pointer;
+}
+
+/* --- Layout --- */
+.main-layout { display: flex; gap: 50px; }
+
+/* --- Sidebar --- */
+.sidebar { width: 180px; flex-shrink: 0; }
+.sidebar h3 { font-size: 20px; font-weight: 700; margin-bottom: 25px; }
+.sidebar ul { list-style: none; }
+.sidebar li { color: #888; margin-bottom: 14px; font-size: 15px; font-weight: 500; cursor: pointer; transition: 0.2s; }
+.sidebar li:hover { color: #000; }
+
+.content-area { flex: 1; }
+
+/* --- Banners (Flexbox) --- */
+.hero-section {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 50px;
+  height: 380px; /* Fixed height for consistency */
+}
+
+.banner-main {
+  flex: 2.2;
+  background: linear-gradient(135deg, #fff2e9, #f2f7ff);
+  border-radius: 35px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.banner-content h1 { font-size: 48px; font-weight: 800; margin-bottom: 10px; }
+.banner-content p { font-size: 16px; color: #555; margin-bottom: 30px; }
+.btn-orange { 
+    background: #ff8a3d; color: #fff; border: none; 
+    padding: 12px 30px; border-radius: 25px; 
+    font-weight: 600; cursor: pointer; 
+}
+
+.img-headphone { height: 120%; object-fit: contain; transform: translateY(-20px); }
+
+/* Promo Stack */
+.promo-stack { flex: 1; display: flex; flex-direction: column; gap: 25px; }
+
+.promo-card { flex: 1; border-radius: 30px; padding: 25px; display: flex; align-items: center; }
+
+.p-peach { background: #fff2e9; justify-content: center; text-align: center; }
+.text-orange { color: #ff8a3d; }
+.promo-text-center h3 { font-size: 22px; }
+
+.p-blue { background: #eaf4fe; justify-content: space-between; overflow: hidden; }
+.promo-info h3 { margin-bottom: 15px; font-size: 18px; }
+.btn-black { background: #000; color: #fff; border: none; padding: 8px 18px; border-radius: 20px; font-size: 13px; cursor: pointer; }
+.img-camera { width: 90px; height: auto; object-fit: contain; transform: translateY(10px); }
+
+/* --- Popular Categories --- */
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.btn-see-all { background: #f0f0f0; border: none; padding: 8px 15px; border-radius: 15px; cursor: pointer; font-size: 14px; font-weight: 500; }
+.btn-see-all:hover { background: #e9e8e8; font-weight: bolder; }
+.category-row { 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap;
+}
+.cat-card {
+  flex: 1;
+  min-width: 150px;
+  background: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.cat-card:hover {
+    background: #f0f0f0; transform: translateY(-5px);
+}
+/* --- RESPONSIVE --- */
+@media (max-width: 1100px) {
+    .hero-section { flex-direction: column; height: auto; }
+    .banner-main { padding: 30px; }
+    .img-headphone { height: 200px; }
+}
+
+@media (max-width: 768px) {
+    .main-layout { flex-direction: column; }
+    .sidebar { width: 100%; }
+    .sidebar ul { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 10px; }
+    .sidebar li { white-space: nowrap; }
+    .category-row { flex-wrap: wrap; }
+    .cat-card { flex: 1 1 40%; }
+}
